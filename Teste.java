@@ -16,6 +16,7 @@ public class Teste {
         LocalDate minhaData;
 
         try {
+            //Faz o cadastro do usuário e guarda na classe Cadastro
             nome = JOptionPane.showInputDialog("Digite seu nome:");
             cadastro.setNome(nome);
             aux = JOptionPane.showInputDialog("Digite seu cpf:");
@@ -38,13 +39,12 @@ public class Teste {
             minhaData = LocalDate.parse(dataNasc);
             cadastro.setDataNascimento(minhaData);
 
-            
-
             // Criando um objeto Login com os dados do Cadastro
             Login login = new Login(cadastro.getUser(), cadastro.getCpf(), cadastro.getSenha());
 
             boolean loginValido = false;
 
+            //Loop continuará até obter um login válido
             while (!loginValido) {
                 // Realizando o login
                 aux = JOptionPane.showInputDialog("Deseja logar com User ou CPF?\n(1) User\n(2) CPF");
@@ -71,8 +71,8 @@ public class Teste {
                 }
             }
         
-        
-    	JOptionPane.showMessageDialog(null, "Dados Pessoais: "
+        //Depois de logar mostra as informações da conta
+    	JOptionPane.showMessageDialog(null, "Informações da Conta: "
                 + "\nNome: " + cadastro.getNome()
                 + "\ncpf: " + cadastro.getCpf()
                 + "\nuser: " + cadastro.getUser()
