@@ -91,7 +91,35 @@ public class Teste {
         
         MaiorDeIdade maior = new MaiorDeIdade();
         
-        JOptionPane.showMessageDialog(null, "Total de Pontos: " + (maior.calculaPontos() + cadastro.calculaPontos()) + " pontos!");
+        if (cadastro.calculaIdade() >= 18) {
+			JOptionPane.showMessageDialog(null, "Total de Pontos: " 
+										+ (maior.calculaPontos() + cadastro.calculaPontos()) + " pontos!");
+		} 
+        
+        //Trazer as dicas sobre a preservação
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //Trazer as opçoes de recompensas e o valor de cada
+        
+        
+        
+        
+        
+        
+        
+        
+        
                 
         JOptionPane.showMessageDialog(null, "Fim de programa. Volte sempre!");
         
