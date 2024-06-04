@@ -10,10 +10,11 @@ public class Cadastro {
     private String nome, user, email, senha, telefone;
     private long cpf;
     private LocalDate dataNascimento;
-
+    private int pontos = 0;
+    		
     public Cadastro() {}
 
-    public Cadastro(String nome, long cpf, String user, String email, String senha, String telefone, LocalDate dataNascimento) {
+    public Cadastro(String nome, long cpf, String user, String email, String senha, String telefone, LocalDate dataNascimento, int pontos) {
         this.nome = nome;
         setCpf(cpf);
         this.user = user;
@@ -21,6 +22,7 @@ public class Cadastro {
         setSenha(senha);
         this.telefone = telefone;
         setDataNascimento(dataNascimento);
+        this.pontos = pontos;
     }
 
     public String getNome() {
@@ -107,6 +109,14 @@ public class Cadastro {
     		System.exit(0); //Encerra o programa após o erro
         }
     }
+    
+    public int getPontos() {
+        return pontos;
+    }
+
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
+    }
 
     // Métodos
     public int calculaIdade() {
@@ -116,17 +126,15 @@ public class Cadastro {
     }
 
     public int calculaPontos() {
-        int pontos = 0;
-
         // Verifica se o email foi inserido
         if (email.length() > 0) {
-            pontos += 100;
+            setPontos(100);
         }
 
         // Verifica se o número de telefone foi inserido
         if (telefone.length() > 0) {
             if (telefone.length() == 9) {
-                pontos += 100;
+            	setPontos(100);
             } else {
                 JOptionPane.showMessageDialog(null, "Número inválido! O telefone deve possuir 9 dígitos!");
             }
@@ -135,7 +143,7 @@ public class Cadastro {
         // Multiplica os pontos por 2 se ambos os campos foram preenchidos
         if (email.length() > 0 && telefone.length() > 0) {
             if (telefone.length() == 9) {
-                pontos *= 1.5;
+            	setPontos(300);
             }
         }
 
