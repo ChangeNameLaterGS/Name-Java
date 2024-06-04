@@ -1,8 +1,6 @@
 package br.com.fiap.bean;
 
-
 public class Login extends Cadastro {
-
 
     // Construtores
     public Login() {}
