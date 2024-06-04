@@ -7,12 +7,13 @@ import javax.swing.JOptionPane;
 
 public class Cadastro {
 
-    private String nome, cpf, user, email, senha, telefone;
+    private String nome, user, email, senha, telefone;
+    private long cpf;
     private LocalDate dataNascimento;
 
     public Cadastro() {}
 
-    public Cadastro(String nome, String cpf, String user, String email, String senha, String telefone, LocalDate dataNascimento) {
+    public Cadastro(String nome, long cpf, String user, String email, String senha, String telefone, LocalDate dataNascimento) {
         this.nome = nome;
         setCpf(cpf);
         this.user = user;
@@ -30,13 +31,13 @@ public class Cadastro {
         this.nome = nome;
     }
 
-    public String getCpf() {
+    public long getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
+    public void setCpf(long cpf) {
         try {
-        	if (cpf.length() == 11) {
+        	if (String.valueOf(cpf).length() == 11) {
         		this.cpf = cpf;
         	} else {
         		throw new Exception("CPF inválido! (O CPF deve possuir 11 dígitos!)");
