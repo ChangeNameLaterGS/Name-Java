@@ -32,7 +32,7 @@ public class MaiorDeIdade extends Cadastro{
 		this.numeroVerificacao = numeroVerificacao;
 	}
 
-	//método com sobrescrita
+	//método com sobrescrita calculando de forma diferente os pontos do usuário
 	public int calculaPontos() {
 
 	    // Variável para armazenar o total de pontos
